@@ -1,6 +1,8 @@
 package internal
 
 import (
+	"crypto/sha256"
+	"crypto/sha512"
 	"crypto/tls"
 	"crypto/x509"
 	"fmt"
@@ -12,6 +14,7 @@ import (
 
 	"github.com/Shopify/sarama"
 	"github.com/pkg/errors"
+	"github.com/xdg-go/scram"
 	"gopkg.in/yaml.v3"
 )
 
@@ -68,6 +71,35 @@ type SchemaConfig struct {
 
 type GlobalProtoDecoderConfig struct {
 	Includes []string `yaml:"includes,omitempty"`
+}
+
+var (
+	SHA256 scram.HashGeneratorFcn = sha256.New
+	SHA512 scram.HashGeneratorFcn = sha512.New
+)
+
+type XDGSCRAMClient struct {
+	*scram.Client
+	*scram.ClientConversation
+	scram.HashGeneratorFcn
+}
+
+func (x *XDGSCRAMClient) Begin(userName, password, authzID string) (err error) {
+	x.Client, err = x.HashGeneratorFcn.NewClient(userName, password, authzID)
+	if err != nil {
+		return err
+	}
+	x.ClientConversation = x.Client.NewConversation()
+	return nil
+}
+
+func (x *XDGSCRAMClient) Step(challenge string) (response string, err error) {
+	response, err = x.ClientConversation.Step(challenge)
+	return
+}
+
+func (x *XDGSCRAMClient) Done() bool {
+	return x.ClientConversation.Done()
 }
 
 func NewConfiguration() *Configuration {
@@ -303,7 +335,8 @@ func (conf *Configuration) configureAuth(saramaConf *sarama.Config) error {
 		}
 
 		saramaConf.Net.SASL.Enable = true
-		saramaConf.Net.SASL.Mechanism = sarama.SASLTypeSCRAMSHA256
+		saramaConf.Net.SASL.SCRAMClientGeneratorFunc = func() sarama.SCRAMClient { return &XDGSCRAMClient{HashGeneratorFcn: SHA512} }
+		saramaConf.Net.SASL.Mechanism = sarama.SASLTypeSCRAMSHA512
 		saramaConf.Net.SASL.User = contextConf.Auth.Username
 		saramaConf.Net.SASL.Password = contextConf.Auth.Password
 
