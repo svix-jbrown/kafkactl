@@ -4,7 +4,7 @@ import (
 	"log"
 
 	"github.com/Shopify/sarama"
-	"github.com/fgrosse/kafkactl/internal"
+	"github.com/svix-jbrown/kafkactl/internal"
 	"github.com/spf13/cobra"
 )
 

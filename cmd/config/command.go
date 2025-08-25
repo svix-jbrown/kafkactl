@@ -3,7 +3,7 @@ package config
 import (
 	"log"
 
-	"github.com/fgrosse/kafkactl/internal"
+	"github.com/svix-jbrown/kafkactl/internal"
 	"github.com/spf13/cobra"
 )
 

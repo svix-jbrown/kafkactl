@@ -29,7 +29,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [v1.1.0] - 2023-04-09
 - Fix Inconsistent meaning of --output=raw in get message and consume command (see fgrosse/kafkactl#2)
-- Make `github.com/fgrosse/kafkactl/pkg` internal
+- Make `github.com/svix-jbrown/kafkactl/pkg` internal
 - Integration with the [Confluent Schema Registry]
 - `kafkactl consume`: Support decoding Avro messages
 - `kafkactl get message`: Support decoding Avro messages
@@ -39,11 +39,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [v1.0.0] - 2023-03-07
 - Initial release
 
-[Unreleased]: https://github.com/fgrosse/kafkactl/compare/v1.4.0...HEAD
-[v1.4.0]: https://github.com/fgrosse/kafkactl/compare/v1.3.0...v1.4.0
-[v1.3.0]: https://github.com/fgrosse/kafkactl/compare/v1.2.0...v1.3.0
-[v1.2.0]: https://github.com/fgrosse/kafkactl/compare/v1.1.0...v1.2.0
-[v1.1.0]: https://github.com/fgrosse/kafkactl/compare/v1.0.0...v1.1.0
-[v1.0.0]: https://github.com/fgrosse/kafkactl/releases/tag/v1.0.0
+[Unreleased]: https://github.com/svix-jbrown/kafkactl/compare/v1.4.0...HEAD
+[v1.4.0]: https://github.com/svix-jbrown/kafkactl/compare/v1.3.0...v1.4.0
+[v1.3.0]: https://github.com/svix-jbrown/kafkactl/compare/v1.2.0...v1.3.0
+[v1.2.0]: https://github.com/svix-jbrown/kafkactl/compare/v1.1.0...v1.2.0
+[v1.1.0]: https://github.com/svix-jbrown/kafkactl/compare/v1.0.0...v1.1.0
+[v1.0.0]: https://github.com/svix-jbrown/kafkactl/releases/tag/v1.0.0
 
 [schema-registry]: https://docs.confluent.io/platform/current/schema-registry/index.html

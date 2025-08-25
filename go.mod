@@ -1,4 +1,4 @@
-module github.com/fgrosse/kafkactl
+module github.com/svix-jbrown/kafkactl
 
 go 1.23.0
 

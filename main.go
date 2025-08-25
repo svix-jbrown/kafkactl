@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/fgrosse/kafkactl/cmd"
+	"github.com/svix-jbrown/kafkactl/cmd"
 )
 
 func main() {

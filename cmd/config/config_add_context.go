@@ -3,7 +3,7 @@ package config
 import (
 	"fmt"
 
-	"github.com/fgrosse/kafkactl/internal"
+	"github.com/svix-jbrown/kafkactl/internal"
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
 )

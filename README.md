@@ -1,9 +1,9 @@
 <h1 align="center">Kafkactl</h1>
 <p align="center">A command line tool to interact with an Apache Kafka cluster.</p>
 <p align="center">
-    <a href="https://github.com/fgrosse/kafkactl/releases"><img src="https://img.shields.io/github/tag/fgrosse/kafkactl.svg?label=version&color=brightgreen"></a>
-    <a href="https://github.com/fgrosse/kafkactl/actions/workflows/test.yml"><img src="https://github.com/fgrosse/kafkactl/actions/workflows/test.yml/badge.svg"></a>
-    <a href="https://github.com/fgrosse/kafkactl/blob/master/LICENSE"><img src="https://img.shields.io/badge/license-BSD--3--Clause-blue.svg"></a>
+    <a href="https://github.com/svix-jbrown/kafkactl/releases"><img src="https://img.shields.io/github/tag/fgrosse/kafkactl.svg?label=version&color=brightgreen"></a>
+    <a href="https://github.com/svix-jbrown/kafkactl/actions/workflows/test.yml"><img src="https://github.com/svix-jbrown/kafkactl/actions/workflows/test.yml/badge.svg"></a>
+    <a href="https://github.com/svix-jbrown/kafkactl/blob/master/LICENSE"><img src="https://img.shields.io/badge/license-BSD--3--Clause-blue.svg"></a>
 </p>
 
 ---
@@ -33,7 +33,7 @@ If you have [Go][go] installed, you can fetch the latest code and compile an
 executable binary using the following command:
 
 ```
-go install github.com/fgrosse/kafkactl@latest
+go install github.com/svix-jbrown/kafkactl@latest
 ```
 
 ## Usage
@@ -190,7 +190,7 @@ This project is licensed under the BSD-3-Clause License - see the [LICENSE](LICE
 [protobuf]: https://protobuf.dev/
 [avro]: https://avro.apache.org/
 [go]: https://go.dev/
-[releases]: https://github.com/fgrosse/kafkactl/releases
+[releases]: https://github.com/svix-jbrown/kafkactl/releases
 [fraugster]: https://github.com/fraugster
-[contributors]: https://github.com/fgrosse/kafkactl/contributors
+[contributors]: https://github.com/svix-jbrown/kafkactl/contributors
 [built-with]: go.mod
