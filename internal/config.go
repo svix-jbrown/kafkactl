@@ -303,7 +303,7 @@ func (conf *Configuration) configureAuth(saramaConf *sarama.Config) error {
 		}
 
 		saramaConf.Net.SASL.Enable = true
-		saramaConf.Net.SASL.Mechanism = sarama.SASLTypePlaintext
+		saramaConf.Net.SASL.Mechanism = sarama.SASLTypeSCRAMSHA256
 		saramaConf.Net.SASL.User = contextConf.Auth.Username
 		saramaConf.Net.SASL.Password = contextConf.Auth.Password
 
